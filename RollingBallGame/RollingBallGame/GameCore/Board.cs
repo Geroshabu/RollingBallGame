@@ -6,7 +6,17 @@ using System.Threading.Tasks;
 
 namespace RollingBallGame.GameCore
 {
-	class Board
+	public enum CellType
 	{
+		Floor,
+		Hole
+	}
+
+	public class Board
+	{
+		private CellType[,] _Cells = null;
+
+		public uint Width { get; private set; }
+		public uint Height { get; private set; }
 	}
 }
