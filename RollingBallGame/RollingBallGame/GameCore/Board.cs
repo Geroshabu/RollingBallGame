@@ -1,8 +1,5 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace RollingBallGame.GameCore
 {
@@ -18,5 +15,22 @@ namespace RollingBallGame.GameCore
 
 		public uint Width { get; private set; }
 		public uint Height { get; private set; }
+
+		/// <summary>
+		/// ‚±‚Ì”Õ–Ê‚ð•`‰æ‚·‚é.
+		/// </summary>
+		public void Draw()
+		{
+			Debug.Assert(_Cells != null);
+
+			for (int r = 0; r < Height; r++)
+			{
+				for (int c = 0; c < Width; c++)
+				{
+					Console.Write(_Cells[r, c] == CellType.Floor ? "¡" : "@");
+				}
+				Console.WriteLine("");
+			}
+		}
 	}
 }
