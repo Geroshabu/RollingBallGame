@@ -3,12 +3,6 @@ using System.Diagnostics;
 
 namespace RollingBallGame.GameCore
 {
-	public enum CellType
-	{
-		Floor,
-		Hole
-	}
-
 	public class Board
 	{
 		private CellType[,] _Cells = null;
