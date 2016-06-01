@@ -44,6 +44,8 @@
   <ItemGroup>
     <Compile Include="GameCore\Board.cs" />
     <Compile Include="GameCore\Cell.cs" />
+    <Compile Include="GameCore\FloorCell.cs" />
+    <Compile Include="GameCore\HoleCell.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
