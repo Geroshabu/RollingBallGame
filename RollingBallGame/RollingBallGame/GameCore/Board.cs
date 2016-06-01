@@ -5,7 +5,7 @@ namespace RollingBallGame.GameCore
 {
 	public class Board
 	{
-		private CellType[,] _Cells = null;
+		private Cell[,] _Cells = null;
 
 		public uint Width { get; private set; }
 		public uint Height { get; private set; }
@@ -21,7 +21,7 @@ namespace RollingBallGame.GameCore
 			{
 				for (int c = 0; c < Width; c++)
 				{
-					Console.Write(_Cells[r, c] == CellType.Floor ? "¡" : "@");
+					_Cells[r, c].Draw();
 				}
 				Console.WriteLine("");
 			}
