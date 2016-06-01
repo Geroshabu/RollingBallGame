@@ -6,7 +6,7 @@ namespace RollingBallGame.GameCore
 	{
 		public override void Draw()
 		{
-			throw new NotImplementedException();
+			Console.Write("Å°");
 		}
 
 		public FloorCell() : base(CellType.Floor) { }
