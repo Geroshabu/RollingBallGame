@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GameCore\Ball.cs" />
     <Compile Include="GameCore\Board.cs" />
     <Compile Include="GameCore\Cell.cs" />
     <Compile Include="GameCore\FloorCell.cs" />
