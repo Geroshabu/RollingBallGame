@@ -22,7 +22,10 @@ namespace RollingBallGame.GameCore
 		{
 			get
 			{
-				throw new NotImplementedException();
+				GridPoint ret;
+				ret.X = (int)Math.Round(Position.X);
+				ret.Y = (int)Math.Round(Position.Y);
+				return ret;
 			}
 		}
 
