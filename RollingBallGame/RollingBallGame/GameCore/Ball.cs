@@ -45,7 +45,11 @@ namespace RollingBallGame.GameCore
 		/// <param name="acceleration">É{Å[ÉãÇ…ó^Ç¶ÇÈâ¡ë¨ìx</param>
 		public void Roll(Vector acceleration)
 		{
-			throw new NotImplementedException();
+			Acceleration = acceleration;
+
+			Velocity = Vector.Add(Velocity, Acceleration);
+
+			Position = Point.Add(Position, Velocity);
 		}
 	}
 }
