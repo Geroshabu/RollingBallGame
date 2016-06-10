@@ -23,8 +23,8 @@ namespace RollingBallGame.GameCore
 			get
 			{
 				GridPoint ret;
-				ret.X = (int)Math.Round(Position.X);
-				ret.Y = (int)Math.Round(Position.Y);
+				ret.X = (int)Math.Floor(Position.X);
+				ret.Y = (int)Math.Floor(Position.Y);
 				return ret;
 			}
 		}
