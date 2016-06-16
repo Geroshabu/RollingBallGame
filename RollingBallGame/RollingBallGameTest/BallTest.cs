@@ -12,6 +12,8 @@ namespace RollingBallGameTest
 		{
 			Ball target = new Ball();
 			Assert.Equal(new Point(0.0, 0.0), target.Position);
+			Assert.Equal(new Vector(0.0, 0.0), target.Velocity);
+			Assert.Equal(new Vector(0.0, 0.0), target.Acceleration);
 		}
 	}
 }
