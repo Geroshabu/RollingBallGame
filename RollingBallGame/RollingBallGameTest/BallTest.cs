@@ -7,6 +7,33 @@ using System.Reflection;
 
 namespace RollingBallGameTest
 {
+	/// <summary>
+	/// privateなメンバにアクセスするというチート用拡張メソッド
+	/// </summary>
+	internal static class BallExtentions
+	{
+		public static void SetPosition(this Ball ball, Point position)
+		{
+			PropertyInfo property_info = ball.GetType().GetProperty("Position",
+				BindingFlags.SetProperty | BindingFlags.Public | BindingFlags.Instance);
+			property_info.SetValue(ball, position);
+		}
+
+		public static void SetVelocity(this Ball ball, Vector velocity)
+		{
+			PropertyInfo property_info = ball.GetType().GetProperty("Velocity",
+				BindingFlags.SetProperty | BindingFlags.Public | BindingFlags.Instance);
+			property_info.SetValue(ball, velocity);
+		}
+
+		public static void SetAcceleration(this Ball ball, Vector acceleration)
+		{
+			PropertyInfo property_info = ball.GetType().GetProperty("Acceleration",
+				BindingFlags.SetProperty | BindingFlags.Public | BindingFlags.Instance);
+			property_info.SetValue(ball, acceleration);
+		}
+	}
+
 	public class BallTest
 	{
 		[Fact(DisplayName = "初期値確認")]
@@ -37,9 +64,7 @@ namespace RollingBallGameTest
 		{
 			Ball ball = new Ball();
 
-			PropertyInfo property_info = ball.GetType().GetProperty("Position",
-				BindingFlags.SetProperty | BindingFlags.Public | BindingFlags.Instance);
-			property_info.SetValue(ball, position);
+			ball.SetPosition(position);
 
 			Assert.Equal(expected, ball.GridPosition);
 		}
@@ -67,15 +92,9 @@ namespace RollingBallGameTest
 		{
 			Ball ball = new Ball();
 
-			PropertyInfo property_info = ball.GetType().GetProperty("Position",
-				BindingFlags.SetProperty | BindingFlags.Public | BindingFlags.Instance);
-			property_info.SetValue(ball, position);
-			property_info = ball.GetType().GetProperty("Velocity",
-				BindingFlags.SetProperty | BindingFlags.Public | BindingFlags.Instance);
-			property_info.SetValue(ball, velocity);
-			property_info = ball.GetType().GetProperty("Acceleration",
-				BindingFlags.SetProperty | BindingFlags.Public | BindingFlags.Instance);
-			property_info.SetValue(ball, acceleration);
+			ball.SetPosition(position);
+			ball.SetVelocity(velocity);
+			ball.SetAcceleration(acceleration);
 
 			ball.Roll(input);
 
