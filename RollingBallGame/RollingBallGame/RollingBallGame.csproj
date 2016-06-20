@@ -48,7 +48,7 @@
     <Compile Include="GameCore\Cell.cs" />
     <Compile Include="GameCore\FloorCell.cs" />
     <Compile Include="GameCore\HoleCell.cs" />
-    <Compile Include="GoalCell.cs" />
+    <Compile Include="GameCore\GoalCell.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

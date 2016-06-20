@@ -1,6 +1,6 @@
 using System;
 
-namespace RollingBallGame
+namespace RollingBallGame.GameCore
 {
 	public class GoalCell
 	{
