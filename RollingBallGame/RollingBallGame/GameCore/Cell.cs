@@ -5,7 +5,8 @@ namespace RollingBallGame.GameCore
 	public enum CellType
 	{
 		Floor,
-		Hole
+		Hole,
+		Goal
 	}
 
 	public abstract class Cell
