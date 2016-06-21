@@ -7,6 +7,15 @@ namespace RollingBallGame.GameCore
 	{
 		public int X;
 		public int Y;
+		public GridPoint(int x, int y)
+		{
+			X = x;
+			Y = y;
+		}
+		public override string ToString()
+		{
+			return X.ToString() + "," + Y.ToString();
+		}
 	}
 
 	public class Ball
