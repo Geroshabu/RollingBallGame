@@ -60,5 +60,13 @@ namespace RollingBallGame.GameCore
 
 			Position = Point.Add(Position, Velocity);
 		}
+
+		public override string ToString()
+		{
+			return "Pos:" + Position.ToString()
+				   + "(Grid:" + GridPosition.ToString() + ")"
+				   + "  Vel:" + Velocity.ToString()
+				   + "  Accel:" + Acceleration.ToString();
+		}
 	}
 }
