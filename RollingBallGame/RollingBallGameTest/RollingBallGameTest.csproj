@@ -61,6 +61,7 @@
     <Compile Include="BallTest.cs" />
     <Compile Include="CellTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TurnTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RollingBallGame\RollingBallGame.csproj">
