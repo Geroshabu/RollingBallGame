@@ -30,7 +30,14 @@ namespace RollingBallGameTest
 		[Fact(DisplayName = "初期値確認", Skip = "未実装")]
 		public void InitializeTest()
 		{
-			throw new NotImplementedException();
+			Turn turn = new Turn(defaultBoard, defaultBallBeforeExecute);
+
+			Assert.Equal(defaultBoard, turn.Board);
+			Assert.NotEqual(defaultBallBeforeExecute, turn.BallBeforeExecute);
+			Assert.Equal(defaultBallBeforeExecute.Position, turn.BallBeforeExecute.Position);
+			Assert.Equal(defaultBallBeforeExecute.Velocity, turn.BallBeforeExecute.Velocity);
+			Assert.Equal(defaultBallBeforeExecute.Acceleration, turn.BallBeforeExecute.Acceleration);
+			Assert.Equal(null, turn.BallAfterExecute);
 		}
 
 		public static IEnumerable<object[]> ExecuteTestData
@@ -79,7 +86,12 @@ namespace RollingBallGameTest
 		[MemberData("ExecuteTestData")]
 		public void ExecuteTest(Point beforePosition, Vector inputAcceleration, Point expectedPosition)
 		{
-			throw new NotImplementedException();
+			Turn turn = new Turn(defaultBoard, defaultBallBeforeExecute);
+			turn.InputAcceleration = inputAcceleration;
+			turn.Execute();
+
+			Assert.NotNull(turn.BallAfterExecute);
+			Assert.Equal(turn.BallAfterExecute.Position, expectedPosition);
 		}
 
 		[Fact(DisplayName = "Executeする前のBallAfterExecuteがnullであること", Skip = "未実装")]
@@ -110,7 +122,13 @@ namespace RollingBallGameTest
 		[Theory(DisplayName = "Executeした時に, ボールが盤面に乗っていなかったら, ボールの状態は変わらないこと", Skip = "未実装")]
 		public void ExecuteTest_AfterFinish(Point beforePosition)
 		{
-			throw new NotImplementedException();
+			Turn turn = new Turn(defaultBoard, defaultBallBeforeExecute);
+			defaultBallBeforeExecute.SetPosition(beforePosition);
+			turn.Execute();
+
+			Assert.Equal(turn.BallAfterExecute.Position, beforePosition);
+			Assert.Equal(turn.BallAfterExecute.Velocity, defaultBallBeforeExecute.Velocity);
+			Assert.Equal(turn.BallAfterExecute.Acceleration, defaultBallBeforeExecute.Acceleration);
 		}
 	}
 }
