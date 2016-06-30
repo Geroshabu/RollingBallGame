@@ -18,7 +18,7 @@ namespace RollingBallGame.GameCore
 		}
 	}
 
-	public class Ball
+	public class Ball : ICloneable
 	{
 		/// <summary>
 		/// 現在位置
@@ -49,6 +49,27 @@ namespace RollingBallGame.GameCore
 		public Vector Acceleration { get; private set; }
 
 		/// <summary>
+		/// デフォルトコンストラクタ
+		/// </summary>
+		public Ball()
+		{
+			Position = new Point();
+			Velocity = new Vector();
+			Acceleration = new Vector();
+		}
+
+		/// <summary>
+		/// コピーコンストラクタ
+		/// </summary>
+		/// <param name="ball">コピー元</param>
+		public Ball(Ball ball)
+		{
+			Position = ball.Position;
+			Velocity = ball.Velocity;
+			Acceleration = ball.Acceleration;
+		}
+
+		/// <summary>
 		/// 加速度を与え、ボールを1ターン分移動させる
 		/// </summary>
 		/// <param name="acceleration">ボールに与える加速度</param>
@@ -67,6 +88,11 @@ namespace RollingBallGame.GameCore
 				   + "(Grid:" + GridPosition.ToString() + ")"
 				   + "  Vel:" + Velocity.ToString()
 				   + "  Accel:" + Acceleration.ToString();
+		}
+
+		public object Clone()
+		{
+			return new Ball(this);
 		}
 	}
 }
