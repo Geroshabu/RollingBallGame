@@ -94,12 +94,6 @@ namespace RollingBallGameTest
 			Assert.Equal(turn.BallAfterExecute.Position, expectedPosition);
 		}
 
-		[Fact(DisplayName = "Executeする前のBallAfterExecuteがnullであること", Skip = "未実装")]
-		public void ExecuteTest_BeforeExecute()
-		{
-			throw new NotImplementedException();
-		}
-
 		public static IEnumerable<Point> ExecuteTest_AfterFinishData
 		{
 			get
