@@ -60,6 +60,13 @@ namespace RollingBallGameTest
 			Assert.Equal(ball.Acceleration, other_ball.Acceleration);
 		}
 
+		[Fact(DisplayName = "コピーコンストラクタにnullを突っ込んでみる")]
+		public void InitializeTest_Copy_Null()
+		{
+			Ball ball;
+			Assert.Throws<ArgumentNullException>("ball", () => ball = new Ball(null));
+		}
+
 		public static IEnumerable<object[]> GridPositionTestData
 		{
 			get

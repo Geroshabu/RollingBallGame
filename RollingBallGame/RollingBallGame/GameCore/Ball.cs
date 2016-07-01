@@ -64,6 +64,8 @@ namespace RollingBallGame.GameCore
 		/// <param name="ball">ÉRÉsÅ[å≥</param>
 		public Ball(Ball ball)
 		{
+			if (ball == null) { throw new ArgumentNullException("ball"); }
+
 			Position = ball.Position;
 			Velocity = ball.Velocity;
 			Acceleration = ball.Acceleration;
