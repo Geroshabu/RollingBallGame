@@ -45,6 +45,21 @@ namespace RollingBallGameTest
 			Assert.Equal(new Vector(0.0, 0.0), target.Acceleration);
 		}
 
+		[Fact(DisplayName = "コピーコンストラクタの確認")]
+		public void InitializeTest_Copy()
+		{
+			Ball ball = new Ball();
+			ball.SetPosition(new Point(0.1, 0.2));
+			ball.SetVelocity(new Vector(0.3, 0.4));
+			ball.SetAcceleration(new Vector(0.5, 0.6));
+
+			Ball other_ball = new Ball(ball);
+
+			Assert.Equal(ball.Position, other_ball.Position);
+			Assert.Equal(ball.Velocity, other_ball.Velocity);
+			Assert.Equal(ball.Acceleration, other_ball.Acceleration);
+		}
+
 		public static IEnumerable<object[]> GridPositionTestData
 		{
 			get
@@ -105,6 +120,25 @@ namespace RollingBallGameTest
 			Assert.Equal(expected_velocity.Y, ball.Velocity.Y, 1);
 			Assert.Equal(expected_acceleration.X, ball.Acceleration.X, 1);
 			Assert.Equal(expected_acceleration.Y, ball.Acceleration.Y, 1);
+		}
+
+		[Fact(DisplayName = "Cloneメソッドの確認")]
+		public void CloneTest()
+		{
+			// ・インスタンスは違うこと
+			// ・値は同じこと
+
+			Ball ball = new Ball();
+			ball.SetPosition(new Point(0.1, 0.2));
+			ball.SetVelocity(new Vector(0.3, 0.4));
+			ball.SetAcceleration(new Vector(0.5, 0.6));
+
+			Ball other_ball = (Ball)ball.Clone();
+
+			Assert.NotEqual(ball, other_ball);
+			Assert.Equal(ball.Position, other_ball.Position);
+			Assert.Equal(ball.Velocity, other_ball.Velocity);
+			Assert.Equal(ball.Acceleration, other_ball.Acceleration);
 		}
 	}
 }
