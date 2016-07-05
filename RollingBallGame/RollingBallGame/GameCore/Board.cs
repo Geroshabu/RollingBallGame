@@ -7,6 +7,20 @@ namespace RollingBallGame.GameCore
 	{
 		private Cell[,] _Cells = null;
 
+		/// <summary>
+		/// 指定した座標のマスを得る.
+		/// </summary>
+		/// <param name="x">x座標(0-based)</param>
+		/// <param name="y">y座標(0-based)</param>
+		/// <returns></returns>
+		public Cell this[int x, int y]
+		{
+			get
+			{
+				return _Cells[x, y];
+			}
+		}
+
 		public uint Width { get; private set; }
 		public uint Height { get; private set; }
 
