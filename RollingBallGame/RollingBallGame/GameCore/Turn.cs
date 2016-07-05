@@ -25,7 +25,9 @@ namespace RollingBallGame.GameCore
 
 		public Turn(Board board, Ball ball)
 		{
-			throw new NotImplementedException();
+			Board = board;
+			BallBeforeExecute = (Ball)ball.Clone();
+			BallAfterExecute = null;
 		}
 
 		/// <summary>

@@ -27,7 +27,7 @@ namespace RollingBallGameTest
 			defaultBallBeforeExecute = new Ball();
 		}
 
-		[Fact(DisplayName = "初期値確認", Skip = "未実装")]
+		[Fact(DisplayName = "初期値確認")]
 		public void InitializeTest()
 		{
 			Turn turn = new Turn(defaultBoard, defaultBallBeforeExecute);
