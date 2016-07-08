@@ -82,7 +82,7 @@ namespace RollingBallGameTest
 			}
 		}
 
-		[Theory(DisplayName = "Executeの正常な実行", Skip = "未実装")]
+		[Theory(DisplayName = "Executeの正常な実行")]
 		[MemberData("ExecuteTestData")]
 		public void ExecuteTest(Point beforePosition, Vector inputAcceleration, Point expectedPosition)
 		{

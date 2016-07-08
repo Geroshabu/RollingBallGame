@@ -37,7 +37,17 @@ namespace RollingBallGame.GameCore
 		/// </summary>
 		public void Execute()
 		{
-			throw new NotImplementedException();
+			BallAfterExecute = BallBeforeExecute.Clone() as Ball;
+
+			// Player thinking ...
+			// ‚Æ‚è‚ ‚¦‚¸InputAcceleration‚Å—^‚¦‚é.
+
+			BallAfterExecute.Roll(InputAcceleration);
+			
+			// ‚Æ‚è‚ ‚¦‚¸•\Ž¦‚³‚¹‚Ä‚Ý‚é
+			Console.WriteLine(BallAfterExecute.ToString());
+			Cell current_cell = Board[BallAfterExecute.GridPosition.X, BallAfterExecute.GridPosition.Y];
+			Console.WriteLine(current_cell.CellType);
 		}
 	}
 }
