@@ -6,7 +6,7 @@ namespace RollingBallGame.GameCore
 	{
 		public override void Draw()
 		{
-			Console.Write("Åö");
+			Console.Write("‚òÖ");
 		}
 
 		public GoalCell() : base(CellType.Goal) { }

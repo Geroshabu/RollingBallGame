@@ -8,7 +8,7 @@ namespace RollingBallGameTest
 	{
 		public class GoalCellTest
 		{
-			[Fact(DisplayName="‰Šú’lŠm”F")]
+			[Fact(DisplayName="åˆæœŸå€¤ç¢ºèª")]
 			public void InitializeTest()
 			{
 				GoalCell cell = new GoalCell();
