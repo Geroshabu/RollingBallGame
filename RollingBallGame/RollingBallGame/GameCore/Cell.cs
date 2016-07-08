@@ -12,7 +12,7 @@ namespace RollingBallGame.GameCore
 	public abstract class Cell
 	{
 		/// <summary>
-		/// ‚±‚Ìƒ}ƒX‚Ì•`‰æ(•W€o—Í)
+		/// ã“ã®ãƒã‚¹ã®æç”»(æ¨™æº–å‡ºåŠ›)
 		/// </summary>
 		public abstract void Draw();
 		
