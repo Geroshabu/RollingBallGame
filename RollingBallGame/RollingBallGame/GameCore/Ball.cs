@@ -21,11 +21,11 @@ namespace RollingBallGame.GameCore
 	public class Ball : ICloneable
 	{
 		/// <summary>
-		/// Œ»İˆÊ’u
+		/// ç¾åœ¨ä½ç½®
 		/// </summary>
 		public Point Position { get; private set; }
 		/// <summary>
-		/// ƒ}ƒX–Ú‚Å”‚¦‚½ê‡‚ÌˆÊ’u
+		/// ãƒã‚¹ç›®ã§æ•°ãˆãŸå ´åˆã®ä½ç½®
 		/// </summary>
 		public GridPoint GridPosition
 		{
@@ -39,17 +39,17 @@ namespace RollingBallGame.GameCore
 		}
 
 		/// <summary>
-		/// ‘¬“x
+		/// é€Ÿåº¦
 		/// </summary>
 		public Vector Velocity { get; private set; }
 
 		/// <summary>
-		/// ‰Á‘¬“x
+		/// åŠ é€Ÿåº¦
 		/// </summary>
 		public Vector Acceleration { get; private set; }
 
 		/// <summary>
-		/// ƒfƒtƒHƒ‹ƒgƒRƒ“ƒXƒgƒ‰ƒNƒ^
+		/// ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 		/// </summary>
 		public Ball()
 		{
@@ -59,9 +59,9 @@ namespace RollingBallGame.GameCore
 		}
 
 		/// <summary>
-		/// ƒRƒs[ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+		/// ã‚³ãƒ”ãƒ¼ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 		/// </summary>
-		/// <param name="ball">ƒRƒs[Œ³</param>
+		/// <param name="ball">ã‚³ãƒ”ãƒ¼å…ƒ</param>
 		public Ball(Ball ball)
 		{
 			if (ball == null) { throw new ArgumentNullException("ball"); }
@@ -72,9 +72,9 @@ namespace RollingBallGame.GameCore
 		}
 
 		/// <summary>
-		/// ‰Á‘¬“x‚ğ—^‚¦Aƒ{[ƒ‹‚ğ1ƒ^[ƒ“•ªˆÚ“®‚³‚¹‚é
+		/// åŠ é€Ÿåº¦ã‚’ä¸ãˆã€ãƒœãƒ¼ãƒ«ã‚’1ã‚¿ãƒ¼ãƒ³åˆ†ç§»å‹•ã•ã›ã‚‹
 		/// </summary>
-		/// <param name="acceleration">ƒ{[ƒ‹‚É—^‚¦‚é‰Á‘¬“x</param>
+		/// <param name="acceleration">ãƒœãƒ¼ãƒ«ã«ä¸ãˆã‚‹åŠ é€Ÿåº¦</param>
 		public void Roll(Vector acceleration)
 		{
 			Acceleration = acceleration;

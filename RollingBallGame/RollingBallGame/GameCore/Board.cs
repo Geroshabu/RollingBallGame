@@ -26,7 +26,7 @@ namespace RollingBallGame.GameCore
 		public uint Height { get; private set; }
 
 		/// <summary>
-		/// ‚±‚Ì”Õ–Ê‚ğ•`‰æ‚·‚é.
+		/// ã“ã®ç›¤é¢ã‚’æç”»ã™ã‚‹.
 		/// </summary>
 		public void Draw()
 		{
