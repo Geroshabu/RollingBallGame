@@ -91,7 +91,9 @@ namespace RollingBallGameTest
 			turn.Execute();
 
 			Assert.NotNull(turn.BallAfterExecute);
-			Assert.Equal(turn.BallAfterExecute.Position, expectedPosition);
+			// 計算の過程で誤差が出るはず. 精度指定して比較する.
+			Assert.Equal(expectedPosition.X, turn.BallAfterExecute.Position.X, 2);
+			Assert.Equal(expectedPosition.Y, turn.BallAfterExecute.Position.Y, 2);
 		}
 
 		public static IEnumerable<Point> ExecuteTest_AfterFinishData
