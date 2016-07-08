@@ -57,5 +57,27 @@ namespace RollingBallGameTest
 				}
 			}
 		}
+
+		[Theory(DisplayName = "インデクサで盤面外を指定した場合")]
+		[InlineData(-1, 1)]	// x最小値はみだし
+		[InlineData(3, 1)]	// x最大値はみだし
+		[InlineData(1, -1)]	// y最小値はみだし
+		[InlineData(1, 3)]	// y最大値はみだし
+		public void IndexerTest_OutOfBoard(int x, int y)
+		{
+			uint width = 3;
+			uint height = 3;
+			Cell[,] cells = {
+								{ new FloorCell(), new FloorCell(), new FloorCell() },
+								{ new FloorCell(), new HoleCell(),  new FloorCell() },
+								{ new FloorCell(), new FloorCell(), new HoleCell()  }
+							};
+			Board board = new Board();
+			board.Set_Cells(cells);
+			board.SetWidth(width);
+			board.SetHeight(height);
+
+			Assert.Equal(CellType.Hole, board[x, y].CellType);
+		}
 	}
 }

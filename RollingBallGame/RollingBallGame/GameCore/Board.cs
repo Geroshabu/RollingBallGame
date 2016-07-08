@@ -9,6 +9,7 @@ namespace RollingBallGame.GameCore
 
 		/// <summary>
 		/// 指定した座標のマスを得る.
+		/// 盤面からはみ出した座標を指定した場合, <see cref="HoleCell"/>を返す.
 		/// </summary>
 		/// <param name="x">x座標(0-based)</param>
 		/// <param name="y">y座標(0-based)</param>
@@ -17,7 +18,7 @@ namespace RollingBallGame.GameCore
 		{
 			get
 			{
-				return _Cells[x, y];
+				return (x >= 0 && x < Width && y >= 0 && y < Height) ?_Cells[x, y] : new HoleCell();
 			}
 		}
 
