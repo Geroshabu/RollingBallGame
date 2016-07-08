@@ -86,8 +86,11 @@ namespace RollingBallGameTest
 		[MemberData("ExecuteTestData")]
 		public void ExecuteTest(Point beforePosition, Vector inputAcceleration, Point expectedPosition)
 		{
-			Turn turn = new Turn(defaultBoard, defaultBallBeforeExecute);
+			Ball before_ball = new Ball();
+			before_ball.SetPosition(beforePosition);
+			Turn turn = new Turn(defaultBoard, before_ball);
 			turn.InputAcceleration = inputAcceleration;
+
 			turn.Execute();
 
 			Assert.NotNull(turn.BallAfterExecute);
