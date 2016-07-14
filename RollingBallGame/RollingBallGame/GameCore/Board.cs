@@ -8,11 +8,11 @@ namespace RollingBallGame.GameCore
 		private Cell[,] _Cells = null;
 
 		/// <summary>
-		/// w’è‚µ‚½À•W‚Ìƒ}ƒX‚ğ“¾‚é.
-		/// ”Õ–Ê‚©‚ç‚Í‚İo‚µ‚½À•W‚ğw’è‚µ‚½ê‡, <see cref="HoleCell"/>‚ğ•Ô‚·.
+		/// æŒ‡å®šã—ãŸåº§æ¨™ã®ãƒã‚¹ã‚’å¾—ã‚‹.
+		/// ç›¤é¢ã‹ã‚‰ã¯ã¿å‡ºã—ãŸåº§æ¨™ã‚’æŒ‡å®šã—ãŸå ´åˆ, <see cref="HoleCell"/>ã‚’è¿”ã™.
 		/// </summary>
-		/// <param name="x">xÀ•W(0-based)</param>
-		/// <param name="y">yÀ•W(0-based)</param>
+		/// <param name="x">xåº§æ¨™(0-based)</param>
+		/// <param name="y">yåº§æ¨™(0-based)</param>
 		/// <returns></returns>
 		public Cell this[int x, int y]
 		{
